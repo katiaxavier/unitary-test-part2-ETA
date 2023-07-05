@@ -69,7 +69,7 @@ class Phonebook:
         """
         Get all name in phonebook
 
-        :return: return all names in phonebook
+        :return: All names in phonebook
         """
 
         return self.entries.keys()
@@ -78,7 +78,7 @@ class Phonebook:
         """
         Get all numbers in phonebook
 
-        :return: return all numbers in phonebook
+        :return: All numbers in phonebook
         """
 
         return self.entries.values()
@@ -87,7 +87,7 @@ class Phonebook:
         """
         Clear all phonebook
 
-        :return: return 'phonebook limpo'
+        :return: 'phonebook limpo'
         """
 
         self.entries = {}
@@ -98,7 +98,7 @@ class Phonebook:
         Search all substring with search_name
 
         :param search_name: string with name for search
-        :return: return list with results of search or 'Contato não encontrado'
+        :return: List with results of search or 'Contato não encontrado'
         """
 
         result = []
@@ -114,7 +114,7 @@ class Phonebook:
         """
         Get phonebook in sorter order
 
-        :return: return phonebook in sorted order
+        :return: Phonebook in sorted order
         """
 
         sorted_dict = dict(sorted(self.entries.items(), key=lambda x: x[0].lower()))
@@ -125,7 +125,7 @@ class Phonebook:
         """
         Get phonebook in reverse sorted order
 
-        :return: return phonebook in reverse sorted order
+        :return: Phonebook in reverse sorted order
         """
 
         reversed_dict = dict(sorted(self.entries.items(), reverse=True, key=lambda x: x[0].lower()))
@@ -162,7 +162,7 @@ class Phonebook:
 
     def delete(self, name):
         """
-        Delete person with name
+        Delete person by name
 
         :param name: String with name
         :return: 'Contato deletado' or 'Contato não encontrado'
