@@ -52,12 +52,12 @@ class Phonebook:
 
         return 'Numero adicionado'
 
-    def lookup(self, name): #recuperar um value pela key
+    def lookup(self, name):
         """
         Retrieve a number by name
 
         :param name: name of person in string
-        :return: return number of person with name
+        :return: number of person with name or 'Contato não encontrado'
         """
 
         if self.check_contact(name):
@@ -71,6 +71,7 @@ class Phonebook:
 
         :return: return all names in phonebook
         """
+
         return self.entries.keys()
 
     def get_numbers(self):
@@ -79,6 +80,7 @@ class Phonebook:
 
         :return: return all numbers in phonebook
         """
+
         return self.entries.values()
 
     def clear(self):
@@ -87,6 +89,7 @@ class Phonebook:
 
         :return: return 'phonebook limpo'
         """
+
         self.entries = {}
         return 'phonebook limpo'
 
@@ -95,8 +98,9 @@ class Phonebook:
         Search all substring with search_name
 
         :param search_name: string with name for search
-        :return: return list with results of search
+        :return: return list with results of search or 'Contato não encontrado'
         """
+
         result = []
         if self.check_contact(search_name):
             for name, number in self.entries.items():
@@ -119,6 +123,7 @@ class Phonebook:
 
     def get_phonebook_reverse(self):
         """
+        Get phonebook in reverse sorted order
 
         :return: return phonebook in reverse sorted order
         """
@@ -129,10 +134,11 @@ class Phonebook:
 
     def change_number(self, name, number):
         """
+        Change number by name
 
-        :param name:
-        :param number:
-        :return:
+        :param name: name of person in string
+        :param number: number of person in string
+        :return: 'Numero atualizado' or 'Contato não encontrado'
         """
 
         if self.check_contact(name):
@@ -143,21 +149,23 @@ class Phonebook:
 
     def get_name_by_number(self, number):
         """
+        Get name by number
 
-        :param number:
-        :return:
+        :param number: number of person in string
+        :return: Name or 'Contato não encontrado'
         """
 
-        for chave, valor in self.entries.items():
-            if valor == number:
-                return chave
+        for nome, numero in self.entries.items():
+            if numero == number:
+                return nome
         return 'Contato não encontrado'
 
     def delete(self, name):
         """
         Delete person with name
+
         :param name: String with name
-        :return: return 'Numero deletado'
+        :return: 'Contato deletado' or 'Contato não encontrado'
         """
 
         if self.check_contact(name):
